@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	
 	private int lvl = 1;
 	private string path;
-
+    
 	public int Xp {
 		get { return xp; }
 	}
