@@ -1069,6 +1069,7 @@ GameObject:
   - component: {fileID: 1386710284}
   - component: {fileID: 1386710283}
   - component: {fileID: 1386710282}
+  - component: {fileID: 1386710285}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1141,6 +1142,26 @@ Transform:
   m_Father: {fileID: 922668041}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
+--- !u!114 &1386710285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386710281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54a6f22513fe3345aef9b9d5f0492ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableDroids:
+  - {fileID: 6607931492103553188, guid: 1a53d18f11e2d7947a9c142897b0f87f, type: 3}
+  - {fileID: 3727227826370810333, guid: 5dae46b53ca322a43bbc3dc414df988c, type: 3}
+  player: {fileID: 922668044}
+  waitTime: 180
+  startingDroids: 5
+  minRange: 5
+  maxRange: 50
 --- !u!1 &1391414698
 GameObject:
   m_ObjectHideFlags: 0
