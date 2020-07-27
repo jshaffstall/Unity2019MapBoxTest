@@ -10,6 +10,11 @@ public class Droid : MonoBehaviour
     [SerializeField] private int defense = 0;
     [SerializeField] private int hp = 10;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     public float SpawnRate ()
     {
         return spawnRate;
@@ -37,6 +42,10 @@ public class Droid : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+        PocketDroidsSceneManager[] managers = FindObjectsOfType<PocketDroidsSceneManager>();
+        foreach (PocketDroidsSceneManager manager in managers)
+            if (manager.gameObject.activeSelf)
+                manager.droidTapped(this.gameObject);
+
     }
 }
