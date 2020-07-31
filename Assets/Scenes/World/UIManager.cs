@@ -17,14 +17,20 @@ public class UIManager : MonoBehaviour
         Assert.IsNotNull(menu);
     }
 
-    public void updateLevel(int level)
+    public void Update()
     {
-        levelText.text = level.ToString();
+        updateLevel();
+        updateXP();
     }
 
-    public void updateXP(int current, int required)
+    public void updateLevel()
     {
-        xpText.text = current.ToString() + " / " + required.ToString();
+        levelText.text = GameManager.Instance().CurrentPlayer.Lvl.ToString();
+    }
+
+    public void updateXP()
+    {
+        xpText.text = GameManager.Instance().CurrentPlayer.Xp.ToString() + " / " + GameManager.Instance().CurrentPlayer.RequiredXp.ToString();
     }
 
     public void toggleMenu()
