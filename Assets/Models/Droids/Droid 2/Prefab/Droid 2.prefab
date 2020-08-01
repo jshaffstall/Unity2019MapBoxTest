@@ -453,6 +453,7 @@ MonoBehaviour:
   attack: 0
   defense: 0
   hp: 10
+  crySound: {fileID: 8300000, guid: 2d6fe6a62989e244b9c14bb724bdd63e, type: 3}
 --- !u!1 &1135470118541382
 GameObject:
   m_ObjectHideFlags: 0
