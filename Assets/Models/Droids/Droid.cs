@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -62,5 +63,14 @@ public class Droid : MonoBehaviour
             if (manager.gameObject.activeSelf)
                 manager.droidTapped(this.gameObject);
 
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        PocketDroidsSceneManager[] managers = FindObjectsOfType<PocketDroidsSceneManager>();
+
+        foreach (PocketDroidsSceneManager manager in managers)
+            if (manager.gameObject.activeSelf)
+                manager.droidCollision(this.gameObject, other);
     }
 }

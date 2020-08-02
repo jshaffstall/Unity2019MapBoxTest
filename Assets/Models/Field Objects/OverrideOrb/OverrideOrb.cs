@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -77,7 +78,7 @@ public class OverrideOrb : MonoBehaviour
     private void UpdateInputStatus ()
     {
 #if UNITY_EDITOR
-        if (Input.GetMouseButtonDownDown(0))
+        if (Input.GetMouseButtonDown(0))
             inputStatus = InputStatus.Grabbing;
         else if (Input.GetMouseButtonDown(0))
             inputStatus = InputStatus.Holding;
@@ -121,7 +122,7 @@ public class OverrideOrb : MonoBehaviour
     private void Release ()
     {
         if (lastY < GetInputPosition().y)
-            Throw();
+            Throw(GetInputPosition());
     }
 
     private void Throw(Vector2 targetPos)
@@ -129,12 +130,12 @@ public class OverrideOrb : MonoBehaviour
         rigidBody.useGravity = true;
         trackingCollisions = true;
 
-        float yDiff = (targetPos.y = lastY) / Screen.height * 100;
+        float yDiff = (targetPos.y - lastY) / Screen.height * 100;
         float speed = throwSpeed * yDiff;
 
         float x = (targetPos.x / Screen.width) - (lastX / Screen.width);
 
-        x = Mathf.Abs(GetInputPosition().x - lastX) / Screen.width * 100 * x;
+        x = Mathf.Abs(GetInputPosition().x - lastX) / (Screen.width * 100 * x);
 
         Vector3 direction = new Vector3(x, 0.0f, 1.0f);
         direction = Camera.main.transform.TransformDirection(direction);
@@ -168,4 +169,22 @@ public class OverrideOrb : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!trackingCollisions)
+            return;
+
+        trackingCollisions = false;
+
+        if (other.gameObject.CompareTag(PocketDroidsConstants.TAG_DROID))
+        {
+            audioSource.PlayOneShot(successSound);
+        }
+        else
+        {
+            audioSource.PlayOneShot(dropSound);
+        }
+        
+        Invoke(nameof(PowerDown), collisionStallTime);
+    }
 }
