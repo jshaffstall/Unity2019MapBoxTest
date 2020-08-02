@@ -104,7 +104,7 @@ public class OverrideOrb : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(GetInputPosition());
         RaycastHit point;
 
-        if (Physics.Raycast(ray, out point, 100.0f) && point.transform == transform))
+        if (Physics.Raycast(ray, out point, 100.0f) && point.transform == transform)
         {
             holding = true;
             transform.parent = null;
