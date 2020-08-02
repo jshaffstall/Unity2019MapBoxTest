@@ -71,6 +71,28 @@ public class OverrideOrb : MonoBehaviour
 
     public void UpdateInputStatus ()
     {
+        #if UNITY_EDITOR
+        if (Input.GetMouseButtonDownDown(0))
+            inputStatus = InputStatus.Grabbing;
+        else if (Input.GetMouseButtonDown(0))
+            inputStatus = InputStatus.Holding;
+        else if (Input.GetMouseButtonUp(0))
+            inputStatus = InputStatus.Releasing;
+        else
+            inputStatus = InputStatus.None;
+        #endif
+
+        #if NOT_UNITY_EDITOR
+        if (Input.GetTouch(0).phase == TouchPhase.Began)
+            inputStatus = InputStatus.Grabbing;
+        else if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            inputStatus = InputStatus.Holding;
+        else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+            inputStatus = InputStatus.Releasing;
+        else
+            inputStatus = InputStatus.None;
+        #endif
+
 
     }
 
