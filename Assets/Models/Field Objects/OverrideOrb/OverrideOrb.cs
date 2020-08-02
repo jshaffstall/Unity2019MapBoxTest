@@ -85,10 +85,10 @@ public class OverrideOrb : MonoBehaviour
         #if NOT_UNITY_EDITOR
         if (Input.GetTouch(0).phase == TouchPhase.Began)
             inputStatus = InputStatus.Grabbing;
-        else if (Input.GetTouch(0).phase == TouchPhase.Moved)
-            inputStatus = InputStatus.Holding;
         else if (Input.GetTouch(0).phase == TouchPhase.Ended)
             inputStatus = InputStatus.Releasing;
+        else if (Input.touchCount == 1)
+            inputStatus = InputStatus.Holding;
         else
             inputStatus = InputStatus.None;
         #endif
