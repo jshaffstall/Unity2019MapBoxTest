@@ -11,6 +11,7 @@ public class DroidData
     private int defense = 0;
     private int hp = 10;
     private string crySound;
+    private string droidType;
     
     private float spawnRate = 0.1f;
 
@@ -26,6 +27,8 @@ public class DroidData
 
     public string CrySound => crySound;
 
+    public string DroidType => droidType;
+
     public DroidData(Droid droid)
     {
         spawnRate = droid.SpawnRate();
@@ -33,5 +36,6 @@ public class DroidData
         defense = droid.Defense();
         hp = droid.Hp();
         crySound = droid.CrySound().name;
+        droidType = droid.gameObject.name;
     }
 }

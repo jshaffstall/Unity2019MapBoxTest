@@ -844,6 +844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0eb42d188dbf2946906fa7a1e7b4a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  droidPrefabs:
+  - {fileID: 1765964446822342, guid: 1a53d18f11e2d7947a9c142897b0f87f, type: 3}
+  - {fileID: 1101904982154262, guid: 5dae46b53ca322a43bbc3dc414df988c, type: 3}
 --- !u!4 &785301117
 Transform:
   m_ObjectHideFlags: 0
@@ -3335,7 +3338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2081384056
 RectTransform:
   m_ObjectHideFlags: 0

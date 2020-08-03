@@ -49,8 +49,10 @@ public class Player : MonoBehaviour {
 
 	public void AddDroid(GameObject droid) {
 		if (droid)
-    		droids.Add(droid);
+		{
+			droids.Add(droid);
 			Save();
+		}
 	}
 
 	private void InitLevelData() {
@@ -86,17 +88,24 @@ public class Player : MonoBehaviour {
 			 droid captured, so we don't know which one to create when we
 			 load it again.  So for now the list of droids captured
 			 won't get loaded when the game starts.  
-			 
+			 */
 			droids.Clear();
 
 			foreach (DroidData droidData in data.Droids)
 			{
-				Droid droid = new Droid();
+				GameObject gameObject = null;
+
+				foreach (GameObject droidObject in GameManager.Instance.DroidPrefabs)
+				{
+					if (droidData.DroidType == droidObject.name)
+					{
+						
+					}
+				}
 				
-				droid.Load(droidData);
-				droids.Add(droid);
+				//droid.Load(droidData);
+				//droids.Add(droid);
 			}
-			*/
 		}
 		else
 		{
