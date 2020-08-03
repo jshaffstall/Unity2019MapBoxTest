@@ -10,11 +10,14 @@ public class CaptureSceneManager : PocketDroidsSceneManager
     [SerializeField] private Vector3 spawnPoint;
     
     private int currentThrowAttempts;
+    private CaptureSceneStatus status = CaptureSceneStatus.InProgress;
 
     public int MaxThrowAttempts => maxThrowAttempts;
 
     public int CurrentThrowAttempts => currentThrowAttempts;
 
+    public CaptureSceneStatus Status => status;
+    
     private void Start()
     {
         CalculateMaxThrows();
@@ -32,7 +35,8 @@ public class CaptureSceneManager : PocketDroidsSceneManager
 
         if (currentThrowAttempts <= 0)
         {
-            
+            if (status != CaptureSceneStatus.Successful)
+                status = CaptureSceneStatus.Failed;
         }
         else
         {
@@ -48,5 +52,10 @@ public class CaptureSceneManager : PocketDroidsSceneManager
     public override void droidTapped(GameObject droid)
     {
         print("droidTapped");
+    }
+
+    public override void droidCollision(GameObject droid, Collision other)
+    {
+        status = CaptureSceneStatus.Successful;
     }
 }

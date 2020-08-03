@@ -390,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562724667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.36, z: -10.09}
+  m_LocalPosition: {x: 0, y: 5.36, z: -17.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -886,6 +886,7 @@ GameObject:
   - component: {fileID: 1240768066}
   - component: {fileID: 1240768065}
   - component: {fileID: 1240768064}
+  - component: {fileID: 1240768068}
   m_Layer: 5
   m_Name: UIRoot
   m_TagString: Untagged
@@ -975,6 +976,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1240768068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240768063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f07972160ccb3e48a8864394629e92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 562724672}
+  successScreen: {fileID: 95812759}
+  failScreen: {fileID: 1098923076}
+  gameScreen: {fileID: 771416919}
+  orbCountText: {fileID: 1735982235}
 --- !u!1001 &1404965091
 PrefabInstance:
   m_ObjectHideFlags: 0
