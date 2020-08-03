@@ -19,9 +19,6 @@ public class CaptureSceneUIManager : MonoBehaviour
         Assert.IsNotNull(successScreen);
         Assert.IsNotNull(failScreen);
         Assert.IsNotNull(gameScreen);
-        
-        Debug.Log(manager.CurrentThrowAttempts);
-        Debug.Log(manager.MaxThrowAttempts);
     }
 
     void Update()

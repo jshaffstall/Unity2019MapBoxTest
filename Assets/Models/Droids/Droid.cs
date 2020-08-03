@@ -65,7 +65,7 @@ public class Droid : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void DroidHit(GameObject other)
     {
         PocketDroidsSceneManager[] managers = FindObjectsOfType<PocketDroidsSceneManager>();
 

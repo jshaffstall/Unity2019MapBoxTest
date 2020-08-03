@@ -20,6 +20,10 @@ public class CaptureSceneManager : PocketDroidsSceneManager
     
     private void Start()
     {
+    }
+
+    private void Awake()
+    {
         CalculateMaxThrows();
         currentThrowAttempts = maxThrowAttempts;
     }
@@ -37,6 +41,7 @@ public class CaptureSceneManager : PocketDroidsSceneManager
         {
             if (status != CaptureSceneStatus.Successful)
                 status = CaptureSceneStatus.Failed;
+                SceneTransitionManager.Instance.GoToScene(PocketDroidsConstants.SCENE_WORLD, null);
         }
         else
         {
@@ -54,8 +59,9 @@ public class CaptureSceneManager : PocketDroidsSceneManager
         print("droidTapped");
     }
 
-    public override void droidCollision(GameObject droid, Collision other)
+    public override void droidCollision(GameObject droid, GameObject other)
     {
         status = CaptureSceneStatus.Successful;
+        SceneTransitionManager.Instance.GoToScene(PocketDroidsConstants.SCENE_WORLD, null);
     }
 }

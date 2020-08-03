@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 562724668}
   - component: {fileID: 562724671}
   - component: {fileID: 562724672}
+  - component: {fileID: 562724674}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -452,7 +453,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.65
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -507,6 +508,18 @@ MonoBehaviour:
   maxThrowAttempts: 3
   orb: {fileID: 7631520033477795853, guid: 60f7cd92c0dc25142863524ba4173d32, type: 3}
   spawnPoint: {x: 0, y: 2.84, z: 0}
+--- !u!114 &562724674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562724667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7499d31e7c79f4a8b2d1d7f7ffa53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &675656084
 GameObject:
   m_ObjectHideFlags: 0

@@ -185,6 +185,9 @@ public class OverrideOrb : MonoBehaviour
         if (other.gameObject.CompareTag(PocketDroidsConstants.TAG_DROID))
         {
             audioSource.PlayOneShot(successSound);
+
+            Droid droid = other.gameObject.GetComponent<Droid>();
+            droid.DroidHit(this.gameObject);
         }
         else
         {
