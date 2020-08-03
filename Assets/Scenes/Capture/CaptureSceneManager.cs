@@ -20,10 +20,6 @@ public class CaptureSceneManager : PocketDroidsSceneManager
     
     private void Start()
     {
-    }
-
-    private void Awake()
-    {
         CalculateMaxThrows();
         currentThrowAttempts = maxThrowAttempts;
     }

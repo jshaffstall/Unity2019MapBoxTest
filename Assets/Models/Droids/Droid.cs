@@ -23,11 +23,6 @@ public class Droid : MonoBehaviour
         Assert.IsNotNull(crySound);
     }
 
-    private void Start()
-    {
-        DontDestroyOnLoad(this);
-    }
-
     public float SpawnRate ()
     {
         return spawnRate;
