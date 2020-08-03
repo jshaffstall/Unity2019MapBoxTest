@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 562724669}
   - component: {fileID: 562724668}
   - component: {fileID: 562724671}
+  - component: {fileID: 562724672}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -379,6 +380,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &562724672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562724667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbffbbbb482c9d42a32c879bd166451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxThrowAttempts: 3
+  orb: {fileID: 7631520033477795853, guid: 60f7cd92c0dc25142863524ba4173d32, type: 3}
+  spawnPoint: {x: 0, y: 2.84, z: 0}
 --- !u!4 &884361767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4259081509004052, guid: 5dae46b53ca322a43bbc3dc414df988c,

@@ -8,7 +8,7 @@ public class XPBonus : MonoBehaviour
 
     void OnMouseDown()
     {
-        GameManager.Instance().CurrentPlayer.AddXp(bonus);
+        GameManager.Instance.CurrentPlayer.AddXp(bonus);
         Destroy(gameObject);
     }
 }
