@@ -48,6 +48,11 @@ public class Droid : MonoBehaviour
         return hp;
     }
 
+    public AudioClip CrySound()
+    {
+        return crySound;
+    }
+    
     private void OnMouseDown()
     {
         PocketDroidsSceneManager[] managers = FindObjectsOfType<PocketDroidsSceneManager>();
@@ -67,5 +72,15 @@ public class Droid : MonoBehaviour
         foreach (PocketDroidsSceneManager manager in managers)
             if (manager.gameObject.activeSelf)
                 manager.droidCollision(this.gameObject, other);
+    }
+
+    public void Load(DroidData data)
+    {
+        spawnRate = data.SpawnRate;
+        catchRate = data.CatchRate;
+        attack = data.Attack;
+        defense = data.Defense;
+        hp = data.Hp;
+        crySound = (AudioClip)Resources.Load(data.CrySound, typeof(AudioClip));
     }
 }
